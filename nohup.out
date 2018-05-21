@@ -1,0 +1,63 @@
+/home/ye/user/yejg/SW_DATA/Or/lib/python3.6/site-packages/sklearn/cross_validation.py:41: DeprecationWarning: This module was deprecated in version 0.18 in favor of the model_selection module into which all the refactored classes and functions are moved. Also note that the interface of the new CV iterators are different from that of this module. This module will be removed in 0.20.
+  "This module will be removed in 0.20.", DeprecationWarning)
+/home/ye/user/yejg/SW_DATA/Or/lib/python3.6/site-packages/h5py/__init__.py:36: FutureWarning: Conversion of the second argument of issubdtype from `float` to `np.floating` is deprecated. In future, it will be treated as `np.float64 == np.dtype(float).type`.
+  from ._conv import register_converters as _register_converters
+WARNING:tensorflow:From /home/ye/user/yejg/LEARN/DL_MODEL_LEARN/TensorFlow/CNN/Vgg16_DR/vgg16.py:92: softmax_cross_entropy_with_logits (from tensorflow.python.ops.nn_ops) is deprecated and will be removed in a future version.
+Instructions for updating:
+
+Future major versions of TensorFlow will allow gradients to flow
+into the labels input on backprop by default.
+
+See tf.nn.softmax_cross_entropy_with_logits_v2.
+
+2018-05-17 10:06:19.623923: I tensorflow/core/platform/cpu_feature_guard.cc:140] Your CPU supports instructions that this TensorFlow binary was not compiled to use: AVX2 FMA
+(35125, 2)
+Training set size: 28100
+1954 4234 698 566
+Oversampled set size: 83986
+Validation set size: 7025
+mean of images: [0.3202717  0.2244431  0.16106363] 
+
+std of images: [0.30285397 0.21890026 0.17444588] 
+
+*************** build the model **************
+build model finished: 0s
+5249 439
+Traing........
+
+[epoch:0/iter:20]  minibatch(size:16) train_loss: 1.60,accuracy: 37.50 % - Elapsed time: 173.63s
+[epoch:0/iter:40]  minibatch(size:16) train_loss: 1.62,accuracy: 12.50 % - Elapsed time: 255.66s
+Validation --> [epoch:0 minibatch 50/439, loss: 1.52,accuracy: 73.49 %
+[epoch:0/iter:60]  minibatch(size:16) train_loss: 1.58,accuracy: 25.00 % - Elapsed time: 342.31s
+[epoch:0/iter:80]  minibatch(size:16) train_loss: 1.61,accuracy: 18.75 % - Elapsed time: 281.03s
+[epoch:0/iter:100]  minibatch(size:16) train_loss: 1.60,accuracy: 37.50 % - Elapsed time: 104.81s
+Validation --> [epoch:0 minibatch 100/439, loss: 1.58,accuracy: 73.48 %
+[epoch:0/iter:120]  minibatch(size:16) train_loss: 1.58,accuracy: 37.50 % - Elapsed time: 267.51s
+[epoch:0/iter:140]  minibatch(size:16) train_loss: 1.58,accuracy: 6.25 % - Elapsed time: 143.74s
+/home/ye/user/yejg/SW_DATA/Or/lib/python3.6/site-packages/sklearn/cross_validation.py:41: DeprecationWarning: This module was deprecated in version 0.18 in favor of the model_selection module into which all the refactored classes and functions are moved. Also note that the interface of the new CV iterators are different from that of this module. This module will be removed in 0.20.
+  "This module will be removed in 0.20.", DeprecationWarning)
+/home/ye/user/yejg/SW_DATA/Or/lib/python3.6/site-packages/h5py/__init__.py:36: FutureWarning: Conversion of the second argument of issubdtype from `float` to `np.floating` is deprecated. In future, it will be treated as `np.float64 == np.dtype(float).type`.
+  from ._conv import register_converters as _register_converters
+WARNING:tensorflow:From /home/ye/user/yejg/LEARN/DL_MODEL_LEARN/TensorFlow/CNN/Vgg16_DR/vgg16.py:92: softmax_cross_entropy_with_logits (from tensorflow.python.ops.nn_ops) is deprecated and will be removed in a future version.
+Instructions for updating:
+
+Future major versions of TensorFlow will allow gradients to flow
+into the labels input on backprop by default.
+
+See tf.nn.softmax_cross_entropy_with_logits_v2.
+
+2018-05-21 15:31:14.016858: I tensorflow/core/platform/cpu_feature_guard.cc:140] Your CPU supports instructions that this TensorFlow binary was not compiled to use: AVX2 FMA
+(35125, 2)
+Training set size: 28100
+1954 4234 698 566
+Oversampled set size: 83986
+Validation set size: 7025
+mean of images: [0.3202717  0.2244431  0.16106363] 
+
+std of images: [0.30285397 0.21890026 0.17444588] 
+
+*************** build the model **************
+build model finished: 0s
+2624 219
+Traing........
+
