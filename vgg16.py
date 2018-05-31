@@ -99,6 +99,9 @@ class Vgg16:
         accuracy = tf.reduce_mean(tf.cast(correct_prediction, tf.float32))
         return accuracy
 
+    def prediction(self):
+        return tf.cast(tf.argmax(self.prob,1),tf.int32)
+
     def train(self, total_loss, global_step):
         """Train vgg model.
 

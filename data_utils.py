@@ -91,6 +91,7 @@ def load_images(files):
     p = Pool()
     process = imread
     results = p.map(process, files)
+    #results=list(map(process,files))
     #images = np.array(results, dtype=np.float32)
     p.close()
     p.join()
@@ -101,6 +102,7 @@ def resize_same_images(images_list,shape=(224,224)):
     Resize=re_resize(shape)
     p = Pool()
     res=p.map(Resize,images_list)
+    #res=list(map(Resize,images_list))
     p.close()
     p.join()
     images=np.array(res,dtype=np.float32)
@@ -208,6 +210,7 @@ def parallel_augment(images, normalize=None, test=False):
     p = Pool()
     process = partial(augment, test=test)
     results = p.map(process, images)
+    #results=list(map(process,images))
     p.close()
     p.join()
     augmented_images = np.array(results, dtype=np.float32)

@@ -1,6 +1,7 @@
 from __future__ import division
 #from matplotlib.pyplot import  imshow
 import data_utils as du
+from data_utils import *
 import os
 import pickle
 import numpy as np
@@ -10,7 +11,7 @@ import pandas as pd
 from time import  time
 from vgg16 import Vgg16
 import warnings
-
+from sklearn import metrics
 # ignore warning
 warnings.filterwarnings("ignore")
 
@@ -97,6 +98,7 @@ prob=vgg16.prob
 logits=vgg16.fc8
 loss=vgg16.loss(logits=logits,labels=y)
 accuracy=vgg16.accuracy(logits=logits,labels=y)
+pred=vgg16.prediction()
 train_op=vgg16.train(total_loss=loss,global_step=global_step)
 
 
@@ -142,12 +144,15 @@ with tf.Session() as sess:
             # start iteration
             iter_start = time()
             sess.run([train_op],feed_dict={X:tra_x,y:tra_y})
-            t_acc,t_loss,merged=sess.run([accuracy,loss,summary_op],feed_dict={X:tra_x,y:tra_y})
+            prediction,t_acc,t_loss,merged=sess.run([pred,accuracy,loss,summary_op],feed_dict={X:tra_x,y:tra_y})
             tra_acc.append(t_acc)
             tra_loss.append(t_loss)
             
             if (iter+1)%print_step==0:
-                print('[epoch:%d/iter:%d]  minibatch(size:%d) train_loss: %.2f,accuracy: %.2f %% - Elapsed time: %.2fs' % (epoch, iter + 1,batch_size, t_loss,t_acc * 100., time() - iter_start))
+                print('[epoch:%d/iter:%d]  minibatch(size:%d) train_loss: %.2f,accuracy: %.2f %%--Elapsed time: %.2fs' % (epoch, iter + 1,batch_size, t_loss,t_acc * 100.,
+                                 time() - iter_start))
+                print('---precision:%.4f,f1_score:%.4f,recall_score:%.4f---'%(metrics.precision_score(tra_y,prediction,average='macro'
+                           ),metrics.f1_score(tra_y,prediction,average='macro'),metrics.recall_score(tra_y,prediction,average='macro')))
                 train_writer.add_summary(merged,(iter+1))
             
             if (iter+1)%val_step==0:
